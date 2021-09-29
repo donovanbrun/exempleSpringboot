@@ -51,7 +51,8 @@ public class EleveManager {
     }
 
     public Eleve getEleve(int index) {
-        return eleves.get(index);
+        if (index < eleves.size()) return eleves.get(index);
+        return null;
     }
 
     public void addEleve(Eleve eleve) {
@@ -59,6 +60,6 @@ public class EleveManager {
     }
 
     public void deleteEleve(int index) {
-        eleves.remove(index);
+        if (index < eleves.size()) eleves.remove(index);
     }
 }
