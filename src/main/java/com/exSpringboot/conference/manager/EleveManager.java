@@ -1,6 +1,8 @@
 package com.exSpringboot.conference.manager;
 
 import com.exSpringboot.conference.model.Eleve;
+import com.exSpringboot.conference.repository.EleveRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -9,9 +11,13 @@ import java.util.List;
 @Component
 public class EleveManager {
 
-    private ArrayList<Eleve> eleves;
+    //private ArrayList<Eleve> eleves;
+    private EleveRepository eleveRepository;
 
-    public EleveManager() {
+    @Autowired
+    public EleveManager(EleveRepository eleveRepository) {
+        this.eleveRepository = eleveRepository;
+        /*
         eleves = new ArrayList<Eleve>();
         eleves.add(new Eleve("ATHIMON", "Clément", false));
         eleves.add(new Eleve("BARTHELME", "Justine", false));
@@ -44,8 +50,9 @@ public class EleveManager {
         eleves.add(new Eleve("SUARD", "Maël", false));
         eleves.add(new Eleve("VAUTIER", "Paul", false));
         eleves.add(new Eleve("WANG", "Ting", false));
+         */
     }
-
+    /*
     public List<Eleve> getEleves() {
         return eleves;
     }
@@ -61,5 +68,23 @@ public class EleveManager {
 
     public void deleteEleve(int index) {
         if (index < eleves.size()) eleves.remove(index);
+    }
+    */
+
+    public List<Eleve> getEleves() {
+        return eleveRepository.findAll();
+    }
+
+    public Eleve getEleve(int index) {
+        if (index < eleveRepository.count()) return eleveRepository.findAll().get(index);
+        return null;
+    }
+
+    public void addEleve(Eleve eleve) {
+        if (eleve != null) eleveRepository.insert(eleve);
+    }
+
+    public void deleteEleve(int index) {
+        if (index < eleveRepository.count()) eleveRepository.delete(eleveRepository.findAll().get(index));
     }
 }
