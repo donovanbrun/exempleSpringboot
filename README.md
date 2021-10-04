@@ -73,7 +73,8 @@ Annotation de paramètre :
 | @PathVariable | récupère une donnée dans l’url (exemple : /eleve/1 -> 1) |
 | @RequestBody | récupère des données JSON du corps (body) de la requête et les transforme en classe (dans notre cas la classe Eleve) |
 
-Méthode exemple avec des annotations :
+Méthode exemple avec des annotations :  
+Requête : http://localhost:8080/path/{index}
 ```java
 @GetMapping(path = "{index}")
 public Object exemple(@PathVariable int index) {
@@ -87,7 +88,7 @@ Voici l’exemple d’une requête HTTP utilisant le type GET :
 GET http://localhost:8080/eleve 
 ``` 
  
-Voici l’exemple d’une requête HTTP utilisant le type POST : (le format et la structure du JSON sont important)
+Voici l’exemple d’une requête HTTP utilisant le type POST : (le format et la structure du JSON sont importants)
 
 ```
 POST http://localhost:8080/eleve
