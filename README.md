@@ -27,11 +27,11 @@ L'API sera sur la liste de notre classe, elle contiendra tous les élèves et pe
 
 ### Structure des sources
 
-La classe principale du projet est EleveApplication, vous n'aurez pas à la créer ni modifier.  
+La classe principale du projet est EleveApplication, vous n'aurez ni à la créer ni à la modifier.  
 Les autres classes sont regroupées en 3 packages :
-* controller : contient la classe EleveController, qui gère les requêtes HTTP entrantes
-* service : contient la classe EleveService, qui gère la liste des élèves
-* model : contient la classe Eleve, qui représente chaque Eleve
+* controller : contient la classe **EleveController**, qui gère les requêtes HTTP entrantes
+* service : contient la classe **EleveService**, qui gère la liste des élèves
+* model : contient la classe **Eleve**, qui représente chaque Eleve
 
 Dans les sources du projet, seule la récupération de la liste des élèves est implémentée. Dans un premier temps, vous allez tester cela avec une requêtes HTTP avant de commencer à développer de nouvelles fonctionnalités dans l'API. Cette étape de vérification est importante pour partir sur de bonnes bases.
 
@@ -63,6 +63,7 @@ Annotation de méthode :
 | ---- | ---- |
 | @GetMapping | permet à Spring Boot de savoir que votre méthode gère les requêtes HTTP Get |
 | @GetMapping(path = "{index}") | identique mais permet de spécifier qu'il y a une variable qui sera passée dans l'URL  ( {index} -> variable index) |
+
 Idem avec @PostMapping, @PutMapping et @DeleteMapping
 
 Annotation de paramètre :
@@ -86,13 +87,13 @@ Voici l’exemple d’une requête HTTP utilisant le type GET :
 GET http://localhost:8080/eleve 
 ``` 
  
-Voici l’exemple d’une requête HTTP utilisant le type POST : (le format et la structure du JSON est important)
+Voici l’exemple d’une requête HTTP utilisant le type POST : (le format et la structure du JSON sont important)
 
 ```
 POST http://localhost:8080/eleve
 Content-type : application/json
 
-{”nom”: “DUPONT”, “prenom”:”Thomas”,”delegue”: true}
+{”nom”: “DUPONT”, “prenom”:”Jean”,”delegue”: true}
 ```
 
 ### 3 - Tester les méthodes écrites précédemment avec des requêtes HTTP :
