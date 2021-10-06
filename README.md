@@ -39,6 +39,8 @@ Dans les sources du projet, seule la récupération de la liste des élèves est
 
 ### 1 - Lancer l’application et récupérer la liste de tous les élèves.
 
+Pour envoyer la requête, vous pouvez tout simplement utiliser un navigateur web, ou [Postman](https://www.postman.com/downloads/) qui vous sera utile pour la suite du TP.
+
 ***Tips : l’url par défaut de l’API est : http://localhost:8080/eleve***
 
 ### 2 - A partir de la méthode getAll() de EleveController et des informations du TP, écrire les méthodes suivantes:
