@@ -100,7 +100,7 @@ public Object exemple(@PathVariable int index) {
 GET http://localhost:8080/eleve 
 ``` 
 
-####Exemple d’une requête HTTP de type POST : ####
+#### Exemple d’une requête HTTP de type POST : ####
 (Le format et la structure du JSON sont importants)
 
 ```
@@ -113,3 +113,32 @@ Content-type : application/json
 ---
 
 ## Deuxième partie pour allez plus loin (bonus)
+
+Cette partie est moins guidée, alors n'hésitez pas à chercher par vous même.
+L'objectif est d'avoir une vraie persistance des données grâce à une base de données, nous avons choisi MongoDB mais si vous voulez vous pouvez utiliser une autre base de données.
+
+Voici les étapes pour réussir cette partie :
+* Mettre la dépendance MongoDB dans le pom.xml
+* Recharger le projet maven pour inclure la nouvelle dépendance
+* Configurer l'accès à la base de données dans le fichier src/main/resources/application.properties
+* Créer le package Repository dans les sources puis l'interface EleveRepository en l'héritant de MongoRepository<Serie, Long> (cette héritage fait tout, pas besoin de rajouter des méthodes dans l'interface)
+* Modifier EleveService pour qu'elle fasse appel à EleveRepository et n'utilise plus de liste
+* Tester, bonne chance
+
+### ***Tips :*** ###
+
+#### Pour configurer la bdd : ####
+```
+spring.data.mongodb.database=eleves
+spring.data.mongodb.port=27017
+spring.data.mongodb.host=localhost
+```
+
+#### Dépendance à mettre dans le pom.xml dans ```<dependencies>``` : ####
+```xml
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-mongodb</artifactId>
+    <version>3.2.1</version>
+</dependency>
+```

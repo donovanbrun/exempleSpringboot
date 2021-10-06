@@ -23,12 +23,12 @@ public class EleveController {
         return eleveService.getEleves();
     }
 
+    /*
     @GetMapping(path = "{index}")
     public Eleve getOne(@PathVariable int index) {
         return eleveService.getEleve(index);
     }
 
-    /*
     @PostMapping
     public void add(@RequestBody Eleve eleve) {
         if (eleve != null) eleveService.addEleve(eleve);

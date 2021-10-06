@@ -40,7 +40,7 @@ public class EleveService {
         eleves.add(new Eleve("PREKA", "Bruno", false));
         eleves.add(new Eleve("RAAPOTO", "Gabin", false));
         eleves.add(new Eleve("REIG", "Julien", false));
-        eleves.add(new Eleve("SIGNE-MORICE", "Luka", false));
+        eleves.add(new Eleve("SIGNE--MORICE", "Luka", false));
         eleves.add(new Eleve("SMARA", "Yassine", false));
         eleves.add(new Eleve("SUARD", "Maël", false));
         eleves.add(new Eleve("VAUTIER", "Paul", false));
@@ -50,19 +50,4 @@ public class EleveService {
     public List<Eleve> getEleves() {
         return eleves;
     }
-
-    public Eleve getEleve(int index) {
-        if (index < eleves.size()) return eleves.get(index);
-        return null;
-    }
-
-    /*
-    public void addEleve(Eleve eleve) {
-        if (eleve != null) eleves.add(eleve);
-    }
-
-    public void deleteEleve(int index) {
-        if (index < eleves.size()) eleves.remove(index);
-    }
-    */
 }
