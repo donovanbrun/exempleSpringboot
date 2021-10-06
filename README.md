@@ -3,11 +3,13 @@
 * [Objectif du TP](#objectif-du-tp)
 * [Explications des fichiers et répertoires](#explication-des-fichiers-et-répertoires)
 * [Première partie](#première-partie)
+* [Deuxième partie bonus](#deuxième-partie-pour-allez-plus-loin-(bonus))
 
 ## Objectif du TP
 
 L'objectif du TP est de concevoir une API à partir d'une structure que nous vous fournissons. Ensuite vous allez devoir tester votre API en jouant avec les requêtes HTTP.
-L'API sera sur la liste de notre classe, elle contiendra tous les élèves et permettra d'en rajouter/supprimer.
+L'API sera sur la liste de notre classe, elle contiendra tous les élèves et permettra d'en rajouter/supprimer.  
+Il n'y a pas de base de données pour la première partie du TP. Les données sont stockées en dur, il suffit de relancer l'API pour tout réinitialiser (vous pouvez donc tout casser).
 
 ---
 
@@ -43,21 +45,31 @@ Dans les sources du projet, seule la récupération de la liste des élèves est
 
 **Attention** : pour chaque nouvelle méthode dans EleveController, vous devrez créer une méthode gérant la liste (accès, ajout, modification, suppression, etc...) dans EleveService. 
 
-* getOne(@PathVariable int index) de type GET
+### a) getOne(@PathVariable int index) de type GET. ###
 Méthode permettant de récupérer un seul étudiant grâce à son index dans la liste.
 
-* add(@RequestBody Eleve eleve) de type POST
+Pour tester : afficher l’élève numéro 10
+
+### b) add(@RequestBody Eleve eleve) de type POST. ###
 Méthode permettant d’ajouter un élève à la liste.
 
-* delete(@PathVariable int index) de type DELETE
+Pour tester : ajouter un nouvel élève
+(afficher la liste entière des élèves pour vérifier si votre requête a fonctionnée)
+
+### c) delete(@PathVariable int index) de type DELETE. ###
 Méthode permettant de supprimer un élève de la liste.
 
-* getDelegue() de type GET
+Pour tester : supprimer l’élève 14
+(afficher la liste entière des élèves pour vérifier si votre requête a fonctionnée)
+
+### d) getDelegue() de type GET. ###
 Méthode permettant de récupérer les élèves délégué de la classe.
 
-***Tips :***
+Pour tester : afficher les délégués
 
-Annotation de méthode :
+### ***Tips :*** ###
+
+#### Annotation de méthode : ####
 
 | Annotation | Objectif |
 | ---- | ---- |
@@ -66,15 +78,15 @@ Annotation de méthode :
 
 Idem avec @PostMapping, @PutMapping et @DeleteMapping
 
-Annotation de paramètre :
+#### Annotation de paramètre : ####
 
 | Annotation | Objectif |
 | ---- | ---- |
 | @PathVariable | récupère une donnée dans l’url (exemple : /eleve/1 -> 1) |
 | @RequestBody | récupère des données JSON du corps (body) de la requête et les transforme en classe (dans notre cas la classe Eleve) |
 
-Méthode exemple avec des annotations :  
-Requête : http://localhost:8080/path/{index}
+#### Méthode exemple avec des annotations : ####
+URL : http://localhost:8080/path/{index}
 ```java
 @GetMapping(path = "{index}")
 public Object exemple(@PathVariable int index) {
@@ -82,13 +94,14 @@ public Object exemple(@PathVariable int index) {
 }
 ```
 
-Voici l’exemple d’une requête HTTP utilisant le type GET :
+#### Exemple d’une requête HTTP utilisant le type GET : ####
 
 ```
 GET http://localhost:8080/eleve 
 ``` 
- 
-Voici l’exemple d’une requête HTTP utilisant le type POST : (le format et la structure du JSON sont importants)
+
+####Exemple d’une requête HTTP de type POST : ####
+(Le format et la structure du JSON sont importants)
 
 ```
 POST http://localhost:8080/eleve
@@ -96,15 +109,6 @@ Content-type : application/json
 
 {”nom”: “DUPONT”, “prenom”:”Jean”,”delegue”: true}
 ```
-
-### 3 - Tester les méthodes écrites précédemment avec des requêtes HTTP :
-
-***Tips : afficher la liste entière des élèves pour vérifier si votre requête a fonctionnée***
-
-* Afficher l’élève numéro 10
-* Ajouter un nouvel élève
-* Supprimer l’élève 14
-* Afficher les délégués
 
 ---
 
