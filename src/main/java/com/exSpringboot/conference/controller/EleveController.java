@@ -23,20 +23,6 @@ public class EleveController {
         return eleveService.getEleves();
     }
 
-    /*
-    @GetMapping(path = "{index}")
-    public Eleve getOne(@PathVariable int index) {
-        return eleveService.getEleve(index);
-    }
+    // Ajoutez votre code ici
 
-    @PostMapping
-    public void add(@RequestBody Eleve eleve) {
-        if (eleve != null) eleveService.addEleve(eleve);
-    }
-
-    @DeleteMapping(path = "{index}")
-    public void delete(@PathVariable int index) {
-        eleveService.deleteEleve(index);
-    }
-    */
 }
