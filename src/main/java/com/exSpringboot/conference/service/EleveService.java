@@ -51,7 +51,7 @@ public class EleveService {
     }
 
     public Eleve getEleve(int index) {
-        if (index < eleves.size()) return eleves.get(index);
+        if (index >= 0 && index < eleves.size()) return eleves.get(index);
         return null;
     }
 
