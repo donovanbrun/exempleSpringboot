@@ -65,7 +65,7 @@ Pour tester : supprimer l’élève 14
 (afficher la liste entière des élèves pour vérifier si votre requête a fonctionnée)
 
 ### d) getDelegue() de type GET. ###
-Méthode permettant de récupérer les élèves délégué de la classe.
+Méthode permettant de récupérer les élèves délégués de la classe.
 
 Pour tester : afficher les délégués
 

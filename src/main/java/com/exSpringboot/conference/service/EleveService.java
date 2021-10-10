@@ -17,10 +17,10 @@ public class EleveService {
         eleves.add(new Eleve("ATHIMON", "Clément", false));
         eleves.add(new Eleve("BARTHELME", "Justine", false));
         eleves.add(new Eleve("BESTARD", "Erwann", false));
-        eleves.add(new Eleve("BIDET", "Emilien", false));
+        eleves.add(new Eleve("BIDET", "Emilien", true));
         eleves.add(new Eleve("BIZET", "Titouan", false));
         eleves.add(new Eleve("BRUN", "Donovan", false));
-        eleves.add(new Eleve("CARPIO", "Jules", false));
+        eleves.add(new Eleve("CARPIO", "Jules", true));
         eleves.add(new Eleve("DALA", "Gertrudes", false));
         eleves.add(new Eleve("DILLENSEGER", "Théo", false));
         eleves.add(new Eleve("FOUILLÉ", "Justine", true));
@@ -51,5 +51,11 @@ public class EleveService {
         return eleves;
     }
 
-    // Ajoutez votre code ici
+    // TODO méthode retournant l'élève à un index dans la liste
+
+    // TODO méthode permettant l'ajout d'un élève dans la liste
+
+    // TODO méthode permettant la suppression d'un élève à un index dans la liste
+
+    // TODO méthode retournant la liste des délègués
 }

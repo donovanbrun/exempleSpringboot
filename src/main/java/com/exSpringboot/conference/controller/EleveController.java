@@ -23,6 +23,11 @@ public class EleveController {
         return eleveService.getEleves();
     }
 
-    // Ajoutez votre code ici
+    // TODO méthode gérant la requête d'accès à un élève grâce à son index dans la liste
 
+    // TODO méthode gérant la requête l'ajout d'une élève
+
+    // TODO méthode gérant la requête de suppression d'un élève grâce à son index dans la liste
+
+    // TODO méthode gérant la requête d'accès à la liste des délègués
 }
