@@ -38,7 +38,7 @@ public class EleveController {
         eleveService.deleteEleve(index);
     }
 
-    @GetMapping
+    @GetMapping(path = "delegue")
     public List<Eleve> getDelegue() {
         return eleveService.getDelegue();
     }

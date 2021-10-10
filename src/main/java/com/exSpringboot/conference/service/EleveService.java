@@ -1,7 +1,6 @@
 package com.exSpringboot.conference.service;
 
 import com.exSpringboot.conference.model.Eleve;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,7 +11,6 @@ public class EleveService {
 
     private ArrayList<Eleve> eleves;
 
-    @Autowired
     public EleveService() {
         eleves = new ArrayList<Eleve>();
         eleves.add(new Eleve("ATHIMON", "Clément", false));
