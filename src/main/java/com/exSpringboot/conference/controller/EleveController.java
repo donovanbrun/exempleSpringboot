@@ -18,7 +18,7 @@ public class EleveController {
         this.eleveService = eleveService;
     }
 
-    @GetMapping
+    @GetMapping()
     public List<Eleve> getAll() {
         return eleveService.getEleves();
     }
